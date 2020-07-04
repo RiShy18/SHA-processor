@@ -1,0 +1,8 @@
+module Zero #(parameter N = 3)(input logic [N-1:0] a, output logic s);
+	
+	logic on = 1'b1;
+	logic off = 1'b0;
+	assign s = off ? a : on;
+	
+
+endmodule
