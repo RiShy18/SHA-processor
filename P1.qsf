@@ -44,15 +44,14 @@ set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:49:26  JULY 05, 2020"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name BOARD "DE1-SoC Board"
-set_global_assignment -name SYSTEMVERILOG_FILE InstructionMemory.sv
-set_global_assignment -name SYSTEMVERILOG_FILE Adder32.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RegFile.sv
-set_global_assignment -name SYSTEMVERILOG_FILE ALU/alu32.sv
-set_global_assignment -name SYSTEMVERILOG_FILE DataMemory.sv
-set_global_assignment -name SYSTEMVERILOG_FILE ZeroExtension.sv
-set_global_assignment -name SYSTEMVERILOG_FILE Mux32to32.sv
-set_global_assignment -name SYSTEMVERILOG_FILE sign_extension.sv
-set_global_assignment -name SYSTEMVERILOG_FILE Shift_Left2.sv
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name SYSTEMVERILOG_FILE zero_extend.sv
+set_global_assignment -name SYSTEMVERILOG_FILE regfile.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Mux2x32to32.sv
+set_global_assignment -name SYSTEMVERILOG_FILE InstructionMem.sv
+set_global_assignment -name SYSTEMVERILOG_FILE dataMem.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Add.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Mux2x5to5.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ControlUnit.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ALUControl_Block.sv
@@ -64,8 +63,13 @@ set_global_assignment -name SYSTEMVERILOG_FILE flush_block.sv
 set_global_assignment -name SYSTEMVERILOG_FILE WB_forward.sv
 set_global_assignment -name SYSTEMVERILOG_FILE TopPipeline.sv
 set_global_assignment -name SYSTEMVERILOG_FILE testbench.sv
-set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
-set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name SYSTEMVERILOG_FILE sign_extend.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Shift_Left_2.sv
+set_global_assignment -name SYSTEMVERILOG_FILE alu.sv
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top

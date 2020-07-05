@@ -63,7 +63,7 @@ assign rd = ID_Instruction[15:11];
 assign imm16= ID_Instruction[15:0];
 
  // Main Control
-Control MainControl(
+ControlUnit MainControl(
 RegDst,
 ALUSrc,
 MemtoReg,

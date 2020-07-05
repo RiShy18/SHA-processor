@@ -6,7 +6,7 @@ parameter ClockDelay = 5000;
 reg clk,reset;
 
 
-MIPSpipeline  myMIPS(clk, reset);
+TopPipeline  myCorei3(clk, reset);
 initial clk = 0;
 always #(ClockDelay/2) clk = ~clk;
 
