@@ -1,7 +1,7 @@
 `timescale 1 ps / 100 fs
 
 // Control unit
-module Control(
+module ControlUnit(
 RegDst,
 ALUSrc,
 MemtoReg,

@@ -1,0 +1,7 @@
+module exp(Op1, Op2, res);
+input Op1, Op2;
+output res;
+
+assign res= Op1**Op2
+
+endmodule

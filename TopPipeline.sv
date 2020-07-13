@@ -7,6 +7,28 @@ wire [31:0] PC4,ID_PC4,EX_PC4;
 wire [31:0] PCbne,PC4bne,PCj,PC4bnej,PCjr; // PC signals in MUX
 wire [31:0] Instruction,ID_Instruction,EX_Instruction; // Output of Instruction Memory
 wire [5:0] Opcode,Function; // Opcode, Function
+// Key Data for modular exponentiation
+
+wire [15:0] M; //Entry pixel
+    //input [7:0] A,
+//input clk;
+//wire start;
+//wire start1;
+wire start2;
+//wire [7:0]e;  //Salidas del modulo exponencial
+reg [15:0]n = 4'd4171; //Modulo
+//  input [2:0] outsel,
+//  input [1:0] insel,
+//	 output [7:0] B
+wire [15:0]remainder;
+wire [15:0]Mpower;
+reg [15:0] d = 4'd2705; //Llave propia
+wire finished;
+//wire fin1;
+
+//Permanent values for Modular Exponentation
+//n = 4'd4171;
+//d = 4'd2705;
 
 // Extend
 wire [15:0] imm16; // immediate in I type instruction
@@ -63,7 +85,7 @@ assign rd = ID_Instruction[15:11];
 assign imm16= ID_Instruction[15:0];
 
  // Main Control
-Control MainControl(
+ControlUnit MainControl(
 RegDst,
 ALUSrc,
 MemtoReg,
@@ -146,6 +168,9 @@ alu alu_block(EX_ALUResult, CarryFlag, ZeroFlag, OverflowFlag, NegativeFlag, Bus
 
 // mux 2x5 to 5 choose shift register is Rd or Rt
 mux2x5to5 muxRegDst( EX_WriteRegister,EX_rt,EX_rd, EX_RegDst);
+
+//Main desencrypt();
+modularmult desencrypt(M,d,n,start2,clk,finished,Mpower,remainder);
 
 //==============MEM STAGE=================
 // register EX/MEM
