@@ -25,7 +25,7 @@
 module test_bench;
 
 	// Inputs
-	reg [15:0] M; //, n, d;
+	reg [15:0] M;
 	reg [7:0] p;
 	reg [7:0] q;
 	reg clk;
@@ -34,30 +34,28 @@ module test_bench;
 	reg start2;
 
 	// Outputs
-	//wire [7:0] e;
-	//wire [15:0] n;
+	wire [7:0] e;
+	wire [15:0] n;
 	wire [15:0] remainder;
-	//wire [15:0] d;
+	wire [15:0] d;
 	wire finish;
 	wire fin1;
-	wire finished;
 
 	// Instantiate the Unit Under Test (UUT)
 	Main uut (
 		.M(M), 
-		//.p(p), 
-		//.q(q), 
+		.p(p), 
+		.q(q), 
 		.clk(clk), 
 		.start(start), 
 		.start1(start1), 
 		.start2(start2), 
-		//.e(e), 
-		//.n(n), 
+		.e(e), 
+		.n(n), 
 		.remainder(remainder), 
-		//.d(d), 
+		.d(d), 
 		.finish(finish), 
-		.fin1(fin1),
-		.finished(finished)
+		.fin1(fin1)
 	);
 
 	initial begin
@@ -65,8 +63,6 @@ module test_bench;
 		M = 0;
 		p = 0;
 		q = 0;
-		//n=0;
-		//d=0;
 		clk = 0;
 		start = 0;
 		start1 = 0;
@@ -74,12 +70,9 @@ module test_bench;
 
 		// Wait 100 ns for global reset to finish
 		#10;
-      M = 3237;
-		//n = 4171;
-		//d= 2705;
-		
-		p = 97;
-		q = 43;
+      M = 3;
+		p = 7;
+		q = 2;
 		#10;
 		start = 1;
 		#5;

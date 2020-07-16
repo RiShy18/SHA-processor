@@ -1,4 +1,11 @@
 `timescale 1 ps / 100 fs
+
+//
+//
+//Based on: https://www.fpga4student.com/2017/06/32-bit-pipelined-mips-processor-in-verilog-1.html
+//
+//
+
 // Top level Verilog code for 32-bit 5-stage Pipelined MIPS Processor 
 module TopPipeline(clk, reset);
 input clk, reset;
