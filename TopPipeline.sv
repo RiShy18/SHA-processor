@@ -6,7 +6,7 @@
 //
 //
 
-// Top level Verilog code for 32-bit 5-stage Pipelined MIPS Processor 
+ 
 module TopPipeline(clk, reset);
 input clk, reset;
 wire [31:0] PC, PCin;
