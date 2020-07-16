@@ -5,8 +5,6 @@
 // For 60 Hz VGA i_pix_stb should be 25.175 MHz, but 25 MHz often works
 // Details in tutorial: https://timetoexplore.net/blog/arty-fpga-vga-verilog-01
 
-`default_nettype none
-
 module vga640x480(
     input wire i_clk,           // base clock
     input wire i_rst,           // reset: restarts frame
