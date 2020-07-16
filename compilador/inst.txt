@@ -1,0 +1,9 @@
+LW R1 R0 4
+SW R3 R2 0
+SW R3 R2 0
+SW R3 R2 0
+_label2
+LW R0   R0          5
+BNE R1 R4 label2
+j label2
+XORI R2 R2 4
